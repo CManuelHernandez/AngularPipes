@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 
 @Component({
@@ -7,6 +8,8 @@ import { MenuItem } from 'primeng/api';
 })
 export class MenuComponent {
   public menuItems: MenuItem[] = [];
+
+  constructor(private router: Router) {}
 
   ngOnInit() {
     this.menuItems = [
@@ -17,14 +20,17 @@ export class MenuComponent {
           {
             label: 'Textos y Fechas',
             icon: 'pi pi-align-left',
+            routerLink: '/',
           },
           {
             label: 'Numeros',
             icon: 'pi pi-dollar',
+            routerLink: 'numbers',
           },
           {
             label: 'No comunes',
             icon: 'pi pi-globe',
+            routerLink: 'uncommon',
           },
         ],
       },
